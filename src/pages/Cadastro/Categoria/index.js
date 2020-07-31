@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -11,22 +12,9 @@ function CadastroCategoria() {
   };
 
   const [categorias, setCategorias] = useState([]);
-  const [valores, setValores] = useState(valoresIniciais);
+  //const [valores, setValores] = useState(valoresIniciais);
 
-  function setValor(chave, valor) {
-    setValores({
-      ...valores,
-      [chave]: valor,
-    });
-  }
-
-  function handleChange(infoDoEvento) {
-    
-    setValor(
-      infoDoEvento.target.getAttribute('name'),
-      infoDoEvento.target.value,
-    );
-  }
+  const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
   // ============
 
@@ -54,15 +42,16 @@ function CadastroCategoria() {
         infoEvento.preventDefault();
         setCategorias([
           ...categorias,
-          valores,
+          values,
         ]);
         
+        clearForm();
       }}
       >
         <FormField
           label="Nome "
           type="text"
-          value={valores.nome}
+          value={values.nome}
           name="nome"
           onChange={handleChange}
         />
@@ -70,7 +59,7 @@ function CadastroCategoria() {
         <FormField
           label="Descricao "
           type="textarea"
-          value={valores.descricao}
+          value={values.descricao}
           name="descricao"
           onChange={handleChange}
         />
@@ -78,7 +67,7 @@ function CadastroCategoria() {
         <FormField
           label="Cor "
           type="color"
-          value={valores.cor}
+          value={values.cor}
           name="nome"
           onChange={handleChange}
         />

@@ -8,14 +8,35 @@
         "text": "Formação de Front End na Alura",
         "url": "https://www.alura.com.br/cursos-online-front-end"
       }
+    },
+    {
+      "id": 2,
+      "titulo": "Front End 2",
+      "cor": "#6BD1FF",
+      "link_extra": {
+        "text": "Formação de Front End na Alura",
+        "url": "https://www.alura.com.br/cursos-online-front-end"
+      }
     }
-   ],
+  ],
   "videos": [
     {
       "id": 1,
       "categoriaId": 1,
       "titulo": "SEO com React",
       "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+    },
+    {
+      "id": 2,
+      "categoriaId": 2,
+      "titulo": "SEO com React 2",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://www.youtube.com/watch?v=B8VCprKKAwE",
+      "categoriaId": 1,
+      "id": 3
     }
   ]
 }
